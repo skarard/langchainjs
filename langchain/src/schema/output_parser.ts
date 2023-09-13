@@ -5,7 +5,8 @@ import {
   ChatGeneration,
   BaseMessage,
 } from "./index.js";
-import { Runnable, RunnableConfig } from "./runnable.js";
+import { Runnable } from "./runnable/index.js";
+import { RunnableConfig } from "./runnable/config.js";
 
 /**
  * Options for formatting instructions.
@@ -161,10 +162,14 @@ export abstract class BaseTransformOutputParser<
     inputGenerator: AsyncGenerator<string | BaseMessage>,
     options: BaseCallbackConfig
   ): AsyncGenerator<T> {
-    yield* this._streamWithConfig(this._transform(inputGenerator), {
-      ...options,
-      runType: "parser",
-    });
+    yield* this._transformStreamWithConfig(
+      inputGenerator,
+      this._transform.bind(this),
+      {
+        ...options,
+        runType: "parser",
+      }
+    );
   }
 }
 
