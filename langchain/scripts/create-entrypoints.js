@@ -83,6 +83,7 @@ const entrypoints = {
   "vectorstores/qdrant": "vectorstores/qdrant",
   "vectorstores/supabase": "vectorstores/supabase",
   "vectorstores/opensearch": "vectorstores/opensearch",
+  "vectorstores/pgvector": "vectorstores/pgvector",
   "vectorstores/milvus": "vectorstores/milvus",
   "vectorstores/prisma": "vectorstores/prisma",
   "vectorstores/typeorm": "vectorstores/typeorm",
@@ -237,6 +238,8 @@ const entrypoints = {
     "experimental/multimodal_embeddings/googlevertexai",
   "experimental/chat_models/anthropic_functions":
     "experimental/chat_models/anthropic_functions",
+  "experimental/chat_models/bittensor":
+    "experimental/chat_models/bittensor",
   "experimental/llms/bittensor":
     "experimental/llms/bittensor",
   // evaluation
@@ -302,6 +305,7 @@ const requiresOptionalDependency = [
   "vectorstores/qdrant",
   "vectorstores/supabase",
   "vectorstores/opensearch",
+  "vectorstores/pgvector",
   "vectorstores/typeorm",
   "vectorstores/milvus",
   "vectorstores/myscale",
